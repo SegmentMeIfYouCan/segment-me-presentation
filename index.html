@@ -9,6 +9,12 @@
 	<!-- Theme used for syntax highlighted code -->
 	<link rel="stylesheet" href="reveal/plugin/highlight/monokai.css">
 
+	<style>
+		p {
+			font-size: 22px;
+		}
+	</style>
+
 	<title>Segment Me If You Can</title>
 </head>
 <body>
@@ -195,11 +201,59 @@
 	</section>
 
 <section data-markdown><textarea data-template>
-## Hello
+##### Evaluation and submission
+
+Loaders and metrics code: [github.com/SegmentMeIfYouCan/road-anomaly-benchmark](https://github.com/SegmentMeIfYouCan/road-anomaly-benchmark)
+
+Submit outputs for evaluation against private ground-truths.
 
 ```python
-import numpy as np
+from road_anomaly_benchmark.evaluation import Evaluation
+
+ev = Evaluation(
+    method_name = 'MyMethod',
+    dataset_name = 'ObstacleTrack-all',
+)
+
+for fr in ev.get_frames():
+	# run your detector with the benchmark images
+    anomaly_p = my_method(fr.image)
+    ev.save_result(fr, anomaly_p)
+
+# save your outputs to files
+ev.wait_to_finish_saving()
 ```
+</textarea></section>
+
+<section>
+<h5>Leaderboards</h5>
+
+<a href="https://segmentmeifyoucan.com/leaderboard" style="font-size: 0.6em">
+	SegmentMeIfYouCan.com/leaderboard
+</a>
+
+
+<figure>
+	<img height="300" src="images/implementation/leaderboard_anomaly.png" />
+	<!-- <figcaption></figcaption> -->
+</figure>
+</section>
+
+<section data-markdown><textarea data-template>
+<h5>Generate curves and tables</h5>
+
+```bash
+python -m road_anomaly_benchmark comparison \
+	MyComparison \
+	metric1,metric2 \
+	method1,method2 \
+	dset1,dset2
+```
+
+<figure>
+	<img height="400" src="images/implementation/pix_class_curves.jpg" />
+	<!-- <figcaption></figcaption> -->
+</figure>
 </textarea></section>
 
 </div>
