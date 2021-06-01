@@ -28,32 +28,32 @@
 		<div style="display: flex; font-size: 1.2rem; justify-content: space-evenly;">
 			<div>
 				<p>Robin Chan</p>
-				<img height="150rem" src="robin.jpeg" /><br>
+				<img height="150rem" src="robin.jpeg" /><br/>
 				<img width="110rem" src="buw.png" />
 			</div>
 			<div>
 				<p>Krzysztof Lis</p>
-				<img height="150rem" src="kris.jpeg" /><br>
+				<img height="150rem" src="kris.jpeg" /><br/>
 				<img width="110rem" src="epfl.png" />
 			</div>
 			<div>
 				<p>Svenja Uhlemeyer</p>
-				<img height="150rem" src="svenja.jpeg" /><br>
+				<img height="150rem" src="svenja.jpeg" /><br/>
 				<img width="110rem" src="buw.png" />
 			</div>
 			<div>
 				<p>Hermann Blum</p>
-				<img height="150rem" src="hermann.jpeg" /><br>
+				<img height="150rem" src="hermann.jpeg" /><br/>
 				<img width="110rem" src="ethz.png" />
 			</div>
 			<div>
 				<p>Sina Honari</p>
-				<img height="150rem" src="sina.jpeg" /><br>
+				<img height="150rem" src="sina.jpeg" /><br/>
 				<img width="110rem" src="epfl.png" />
 			</div>
 			<div>
 				<p>Matthias Rottmann</p>
-				<img height="150rem" src="matthias.jpeg" /><br>
+				<img height="150rem" src="matthias.jpeg" /><br/>
 				<img width="110rem" src="buw.png" />
 			</div>
 		</div>
@@ -86,85 +86,85 @@
 		<iframe data-src="https://segmentmeifyoucan.com/datasets" width="90%" height="500rem" data-preload></iframe>
 	</section>
 	
-    <section>
+	<section>
 		<h5>RoadAnomaly21</h5>
 		<div style="display: flex; justify-content: center; font-style: italic; font-size: 18px;">
 		<figure>
 			<img height="140px" src="images/airplane0001_blend.jpg"/>
 			<img height="140px" src="images/cones0006_blend.jpg"/>
 			<figcaption>Anomalies can appear everywhere in the image.</figcaption>
-        <figure/>
+		</figure>
 		</div>
 		<div style="display: flex; justify-content: center; font-style: italic; font-size: 18px;">
 		<figure>
 			<img height="140px" src="images/cow0001_blend.jpg"/>
 			<img height="140px" src="images/tractor0005_blend.jpg"/>
 			<figcaption>Anomalies widely differ in size.</figcaption>
-        <figure/>
+		</figure>
 		</div>
 		<div style="display: flex; justify-content: center; font-style: italic; font-size: 18px;">
 		<figure>
 			<img height="140px" src="images/leopard0000_blend.jpg"/>
 			<img height="140px" src="images/sheep0008_blend.jpg"/>
 			<figcaption>Wide variety of environments.</figcaption>
-        <figure/>
+		</figure>
 		</div>
 	</section>
 	
-    <section>
+	<section>
 		<h5>Labeling Policy</h5>
 		<div style="font-size: 22px;">
-            <p> Decision whether an object is anomalous or not is based on the 19 Cityscapes evaluation classes. If an object can be assigned to one of these classes, it is labeled as not anomaly (white), otherwise as anomaly (orange) or void (black). <p/>
-		<div/>
+			<p> Decision whether an object is anomalous or not is based on the 19 Cityscapes evaluation classes. If an object can be assigned to one of these classes, it is labeled as not anomaly (white), otherwise as anomaly (orange) or void (black). </p>
+		</div>
 		<div style="display: flex; justify-content: center; font-style: italic; font-size: 18px;">
 		<figure>
 			<img height="140px" src="images/carriage0002.jpg"/>
 			<img height="140px" src="images/carriage0002_labels_semantic_color.png"/>
 			<figcaption>The objects of interest are the carriage including the horses. The other unknown objects in the background (e.g. parasols, chair) are voided. We also void small gaps inside of the anomalies.</figcaption>
-        <figure/>
+		</figure>
 		</div>
 	</section>
 	
-    <section>
+	<section>
 		<h5>RoadObstacle21</h5>
 		<div style="display: flex; justify-content: center; font-style: italic; font-size: 18px;">
 		<figure>
 			<img height="140px" src="images/greyasphalt_basket_1_blend.jpg"/>
 			<img height="140px" src="images/greyasphalt_basket_7_blend.jpg"/>
 			<figcaption>Obstacles appear at different distances.</figcaption>
-        <figure/>
+		</figure>
 		</div>
 		<div style="display: flex; justify-content: center; font-style: italic; font-size: 18px;">
 		<figure>
 			<img height="140px" src="images/gravel_boxG_2_blend.jpg"/>
 			<img height="140px" src="images/paving_watercanB_2_blend.jpg"/>
 			<figcaption>Different road surfaces.</figcaption>
-        <figure/>
+		</figure>
 		</div>
 		<div style="display: flex; justify-content: center; font-style: italic; font-size: 18px;">
 		<figure>
 			<img height="140px" src="images/snowstorm1_00_16_02.578_blend.jpg"/>
 			<img height="140px" src="images/driveway_shovel_2_2_blend.jpg"/>
 			<figcaption>Different lighting and weather conditions..</figcaption>
-        <figure/>
+		</figure>
 		</div>
 	</section>
 	
-    <section>
+	<section>
 		<h5>Labeling Policy</h5>
 		<div style="font-size: 22px;">
-            <p> The road ahead is the region of interest, labeled as not obstacle (white). Every object placed on the road is labeled as obstacle (orange), everything besides the road is voided (black). We also void areas that could distract the model, such as wet spots on the road. <p/>
-		<div/>
+			<p> The road ahead is the region of interest, labeled as not obstacle (white). Every object placed on the road is labeled as obstacle (orange), everything besides the road is voided (black). We also void areas that could distract the model, such as wet spots on the road. </p>
+		</div>
 		<div style="display: flex; justify-content: center; font-style: italic; font-size: 18px;">
 		<figure>
 			<img height="160px" src="images/gravel_boot_5.webp"/>
 			<img height="160px" src="images/gravel_boot_5_labels_semantic_color.png"/>
 			<figcaption>The road is the region of interest. The boot is labeled as obstacle, the background and the wet spots are ignored in the evaluation. </figcaption>
-        <figure/>
+		</figure>
 		</div>
 	</section>
 
-    <section>
+	<section>
 		<h5>Anomaly Segmentation Performance Metrics</h5>
 		<div style="font-size: 22px">
 		<ul>
@@ -185,12 +185,12 @@
 		</ul>
 	</li>
 </ul>
-		<div/>
+		</div>
 		<div style="display: flex; justify-content: center; font-style: italic; font-size: 18px;">
 		<figure>
 			<img height="200px" src="images/siou.png"/>
 			<figcaption>ordinary vs. adjusted component-wise intersection over union (IoU vs. sIoU)</figcaption>
-        <figure/>
+		</figure>
 		</div>
 	</section>
 
