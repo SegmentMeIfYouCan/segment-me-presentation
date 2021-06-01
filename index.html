@@ -163,7 +163,36 @@
         <figure/>
 		</div>
 	</section>
-	
+
+    <section>
+		<h5>Anomaly Segmentation Performance Metrics</h5>
+		<div style="font-size: 22px">
+		<ul>
+		<li>Classic pixel-wise metrics:
+			<ul>
+				<li>AUROC: Area under receiver operating characteristic curve (TPR vs. FPR)</li>
+				<li>AUPRC: Area under precision recall curve (precision vs. recall)</li>
+			</ul>
+		</li>
+	<li>Recent component-wise metrics:
+		<ul>
+			<li>sIoU pred: adjusted component-wise intersection over union wrt pred</li>
+			<li>sIoU gt: adjusted component-wise intersection over union wrt ground truth</li>
+			<li>TP: sIoU gt greater than a given threshold</li>
+			<li>FN: sIoU gt smaller than a given threshold</li>
+			<li>FP: sIoU pred smaller than a given threshold</li>
+			<li>F1 :=  2TP / (2TP + FP + FN)</li>
+		</ul>
+	</li>
+</ul>
+		<div/>
+		<div style="display: flex; justify-content: center; font-style: italic; font-size: 18px;">
+		<figure>
+			<img height="200px" src="images/siou.png"/>
+			<figcaption>ordinary vs. adjusted component-wise intersection over union (IoU vs. sIoU)</figcaption>
+        <figure/>
+		</div>
+	</section>
 
 <section data-markdown><textarea data-template>
 ## Hello
