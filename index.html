@@ -225,6 +225,26 @@ ev.wait_to_finish_saving()
 ```
 </textarea></section>
 
+<section data-markdown><textarea data-template>
+##### Reusable metrics
+
+* Metrics can be used with other datasets
+* Add new metrics in a modular way
+
+```bash
+# Pixel classification (PR, ROC) metric
+python -m road_anomaly_benchmark metric PixBinaryClass \
+	method1,method2 dset1,dset2
+
+# Instance level metrics
+python -m road_anomaly_benchmark metric SegEval-ObstacleTrack \
+	method1,method2 dset1,dset2
+```
+
+</textarea>
+</section>
+
+
 
 <section data-markdown><textarea data-template>
 <h5>Generate curves and tables</h5>
@@ -247,7 +267,6 @@ python -m road_anomaly_benchmark comparison \
 	</a>
 	</p> -->
 </textarea>
-
 </section>
 
 </div>
