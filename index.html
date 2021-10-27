@@ -220,10 +220,10 @@
 				<ul>
 					<li>sIoU: adjusted component-wise intersection over union wrt ground truth</li>
 					<li>PPV: component-wise positive predictive value (or precision) wrt prediction</li>
-					<li>TP: sIoU greater than a given threshold</li>
-					<li>FN: sIoU smaller than a given threshold</li>
-					<li>FP: sIoU PPV smaller than a given threshold</li>
-					<li><strong>F1</strong> :=  2TP / (2TP + FP + FN) &isin; [0,1]</li>
+					<li>TP: sIoU greater than a given threshold &tau;</li>
+					<li>FN: sIoU smaller than a given threshold &tau;</li>
+					<li>FP: PPV smaller than a given threshold &tau;</li>
+					<li><strong>F1(&tau;)</strong> :=  2TP / (2TP + FP + FN) &isin; [0,1] averaged over &tau;=0.25,0.30,...0.75</li>
 				</ul>
 			</li>
 		</ul>
@@ -231,7 +231,7 @@
 		<div style="display: flex; justify-content: center; font-style: italic; font-size: 18px;">
 		<figure>
 			<img height="200px" src="images/elephant0006_blend_crop.jpg"/>
-			<figcaption>ordinary vs. adjusted component-wise intersection over union. 
+			<figcaption>Ordinary vs. adjusted component-wise intersection over union. 
 				<br><span style="color:green">green contour</span>: IoU=68.18% vs. sIoU=87.01%
 				<br><span style="color:red">red contour</span>: IoU=21.68% vs. sIoU=68.44%
 			</figcaption>
