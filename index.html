@@ -101,11 +101,11 @@
 		<h5>We benchmark semantic anomalies.</h5>
 		<div style="font-size: 22px">
 		<ul>
-			<li>We benchmark the detection  of semantic anomalies that do not fit into any class definitions.</li>
+			<li>We benchmark the identification of semantic anomalies that do not fit into any class definitions.</li>
 			<li>2 Tracks:
 				<ul>
-					<li>Anomaly Track: detect anomaly  with respect to Cityscapes.</li>
-					<li>Obstacle Track: detect anything that is <strong>not</strong> drivable area on the road.</li>
+					<li>Anomaly Track: detect and localize anomaly  with respect to Cityscapes.</li>
+					<li>Obstacle Track: detect and localize anything that is <strong>not</strong> drivable area on the road.</li>
 				</ul>
 			</li>
 			<li>based on real-world images</li>
@@ -210,28 +210,31 @@
 		<h5>Anomaly Segmentation Performance Metrics</h5>
 		<div style="font-size: 22px">
 		<ul>
-		<li>Classic pixel-wise metrics:
-			<ul>
-				<li>AUROC: Area under receiver operating characteristic curve (TPR vs. FPR)</li>
-				<li>AUPRC: Area under precision recall curve (precision vs. recall)</li>
-			</ul>
-		</li>
-	<li>Recent component-wise metrics:
-		<ul>
-			<li>sIoU pred: adjusted component-wise intersection over union wrt pred</li>
-			<li>sIoU gt: adjusted component-wise intersection over union wrt ground truth</li>
-			<li>TP: sIoU gt greater than a given threshold</li>
-			<li>FN: sIoU gt smaller than a given threshold</li>
-			<li>FP: sIoU pred smaller than a given threshold</li>
-			<li>F1 :=  2TP / (2TP + FP + FN)</li>
+			<li>Classic pixel-wise metrics:
+				<ul>
+					<li>AUROC: Area under receiver operating characteristic curve (TPR vs. FPR)</li>
+					<li><strong>AUPRC</strong>: Area under precision recall curve (precision vs. recall)</li>
+				</ul>
+			</li>
+			<li>Recent component-wise metrics:
+				<ul>
+					<li>sIoU: adjusted component-wise intersection over union wrt ground truth</li>
+					<li>PPV: component-wise positive predictive value (or precision) wrt prediction</li>
+					<li>TP: sIoU greater than a given threshold</li>
+					<li>FN: sIoU smaller than a given threshold</li>
+					<li>FP: sIoU PPV smaller than a given threshold</li>
+					<li><strong>F1</strong> :=  2TP / (2TP + FP + FN) &isin; [0,1]</li>
+				</ul>
+			</li>
 		</ul>
-	</li>
-</ul>
 		</div>
 		<div style="display: flex; justify-content: center; font-style: italic; font-size: 18px;">
 		<figure>
-			<img height="200px" src="images/siou.png"/>
-			<figcaption>ordinary vs. adjusted component-wise intersection over union (IoU vs. sIoU)</figcaption>
+			<img height="200px" src="images/elephant0006_blend_crop.jpg"/>
+			<figcaption>ordinary vs. adjusted component-wise intersection over union. 
+				<br><span style="color:green">green contour</span>: IoU=68.18% vs. sIoU=87.01%
+				<br><span style="color:red">red contour</span>: IoU=21.68% vs. sIoU=68.44%
+			</figcaption>
 		</figure>
 		</div>
 	</section>
