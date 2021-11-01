@@ -242,6 +242,7 @@
 Loaders and metrics code: [github.com/SegmentMeIfYouCan/road-anomaly-benchmark](https://github.com/SegmentMeIfYouCan/road-anomaly-benchmark)
 
 Submit outputs for evaluation against private ground-truths.
+Public validation set is available.
 
 ```python
 from road_anomaly_benchmark.evaluation import Evaluation
@@ -256,7 +257,7 @@ for fr in ev.get_frames():
     anomaly_p = my_method(fr.image)
     ev.save_result(fr, anomaly_p)
 
-# save your outputs to files
+# files are being written in a background thread
 ev.wait_to_finish_saving()
 ```
 </textarea></section>
@@ -271,7 +272,7 @@ ev.wait_to_finish_saving()
 ```bash
 # Pixel classification (PR, ROC) metric
 python -m road_anomaly_benchmark metric PixBinaryClass \
-	method1,method2 dset1,dset2
+	method1,method2 ObstacleTrack-validation
 
 # Instance level metrics
 python -m road_anomaly_benchmark metric SegEval-ObstacleTrack \
@@ -296,7 +297,7 @@ python -m road_anomaly_benchmark comparison \
 
 <figure style="width: 960px; height: 400px; position: relative;">
 	<img style="position: absolute; top: 0; left: 0; border: solid black 2px;" height="300" src="images/implementation/leaderboard_anomaly.png" />
-	<img style="position: absolute; bottom: 0; right: 0; border: solid black 2px;" height="400" src="images/implementation/pix_class_curves.jpg" />
+	<img style="position: absolute; bottom: 0; right: 0; border: solid black 2px;" height="400" src="images/implementation/pix_class_curves2.png" />
 </figure>
 <!-- <p>
 	Leaderboard at <a href="https://segmentmeifyoucan.com/leaderboard">
@@ -305,6 +306,19 @@ python -m road_anomaly_benchmark comparison \
 	</p> -->
 </textarea>
 </section>
+
+<section data-markdown><textarea data-template>
+<h5>Benchmark results - advantages:</h5>
+
+* Tailored solutions
+* Out-of-distribution training data
+	
+<figure style="" >
+	<img style="" width="450" src="images/results/results_anomaly.png" />
+	<img style="" width="450" src="images/results/results_obstacle.png" />
+</figure>
+</textarea></section>
+
 
 </div>
 </div>
