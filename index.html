@@ -110,20 +110,20 @@
 		<div style="font-size: 30px; margin-top: 20px;">Public leaderboard and submission instructions at <a href="https://segmentmeifyoucan.com/">segmentmeifyoucan.com</a>.</div>
 	</section>
 
-	<section>
-		<h5>Data for Anomaly Segmentation is Scarce</h5>
-		<img src="dataset_overview.png" />
-	</section>
+<!--	<section>-->
+<!--		<h5>Data for Anomaly Segmentation is Scarce</h5>-->
+<!--		<img src="dataset_overview.png" />-->
+<!--	</section>-->
 
-	<section>
-		<h5>Public Leaderboard</h5>
-		<iframe data-src="https://segmentmeifyoucan.com/" width="90%" height="500rem" data-preload></iframe>
-	</section>
+<!--	<section>-->
+<!--		<h5>Public Leaderboard</h5>-->
+<!--		<iframe data-src="https://segmentmeifyoucan.com/" width="90%" height="500rem" data-preload></iframe>-->
+<!--	</section>-->
 
-	<section>
-		<h5>Datasets</h5>
-		<iframe data-src="https://segmentmeifyoucan.com/datasets" width="90%" height="500rem" data-preload></iframe>
-	</section>
+<!--	<section>-->
+<!--		<h5>Datasets</h5>-->
+<!--		<iframe data-src="https://segmentmeifyoucan.com/datasets" width="90%" height="500rem" data-preload></iframe>-->
+<!--	</section>-->
 
 	<section>
 		<h5>RoadAnomaly21</h5>
@@ -153,13 +153,18 @@
 	<section>
 		<h5>Labeling Policy</h5>
 		<div style="font-size: 22px;">
-			<p> Decision whether an object is anomalous or not is based on the 19 Cityscapes evaluation classes. If an object can be assigned to one of these classes, it is labeled as not anomaly (white), otherwise as anomaly (orange) or void (black). </p>
+			<ul>
+				<li>Not anomaly (white): 19 Cityscapes classes</li>
+				<li>Anomaly (orange): OoD objects</li>
+				<li>Void (black): Unknown objects in the background, gaps inside anomalies etc.</li>
+			</ul>
+<!--			<p> Decision whether an object is anomalous or not is based on the 19 Cityscapes evaluation classes. If an object can be assigned to one of these classes, it is labeled as not anomaly (white), otherwise as anomaly (orange) or void (black). </p>-->
 		</div>
 		<div style="display: flex; justify-content: center; font-style: italic; font-size: 18px;">
 		<figure>
 			<img height="140px" src="images/carriage0002.jpg"/>
 			<img height="140px" src="images/carriage0002_labels_semantic_color.png"/>
-			<figcaption>The objects of interest are the carriage including the horses. The other unknown objects in the background (e.g. parasols, chair) are voided. We also void small gaps inside of the anomalies.</figcaption>
+			<figcaption>The objects of interest are the carriage including the horses. The other unknown objects in the background (e.g. parasols, chair) and gaps inside the carriage are voided. </figcaption>
 		</figure>
 		</div>
 	</section>
@@ -192,13 +197,18 @@
 	<section>
 		<h5>Labeling Policy</h5>
 		<div style="font-size: 22px;">
-			<p> The road ahead is the region of interest, labeled as not obstacle (white). Every object placed on the road is labeled as obstacle (orange), everything besides the road is voided (black). We also void areas that could distract the model, such as wet spots on the road. </p>
+			<ul>
+				<li>Not obstacle (white): Driveable area</li>
+				<li>Obstacle (orange): Objects placed on the road</li>
+				<li>Void (black): Everything besides the road, gaps inside obstacles</li>
+			</ul>
+<!--			<p> The road ahead is the region of interest, labeled as not obstacle (white). Every object placed on the road is labeled as obstacle (orange), everything besides the road is voided (black). We also void areas that could distract the model, such as wet spots on the road. </p>-->
 		</div>
 		<div style="display: flex; justify-content: center; font-style: italic; font-size: 18px;">
 		<figure>
-			<img height="160px" src="images/gravel_boot_5.webp"/>
-			<img height="160px" src="images/gravel_boot_5_labels_semantic_color.png"/>
-			<figcaption>The road is the region of interest. The boot is labeled as obstacle, the background and the wet spots are ignored in the evaluation. </figcaption>
+			<img height="160px" src="images/greyasphalt_basket_1.webp"/>
+			<img height="160px" src="images/greyasphalt_basket_1_labels_semantic_color.png"/>
+			<figcaption>The road is the region of interest. The basket is labeled as obstacle, the background and the gap are ignored in the evaluation. </figcaption>
 		</figure>
 		</div>
 	</section>
